@@ -1,6 +1,6 @@
 AppsKey::RWin
 Pause::CapsLock
-#If WinActive("ahk_exe chrome.exe") || WinActive("ahk_exe Code.exe") || WinActive("ahk_exe XYplorer.exe")
+#If WinActive("ahk_exe chrome.exe") || WinActive("ahk_exe Code.exe") || WinActive("ahk_exe XYplorer.exe") || WinActive("ahk_exe WindowsTerminal.exe") || WinActive("ahk_exe Listary.exe")
 `::Esc
 Esc::`
 #If
