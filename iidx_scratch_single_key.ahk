@@ -15,7 +15,6 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
         ExitApp
     }
 
-toggle := 1
 last := 0 ;; q->0, w->1
 q_down := 0
 w_down := 0
@@ -23,16 +22,14 @@ w_down := 0
 $LShift::
     if (q_down)
         return
-    Send, {m up}{n up}
-    Send, % toggle ? "{m down}" : "{n down}"
-    q_down := 1
+    Send, {b up}{b down}
     last := 0
-    toggle := !toggle
+    q_down := 1
 return
 
 $LShift up::
     if (last = 0) {
-        Send, {m up}{n up}
+        Send, {b up}
     }
     q_down := 0
 return
@@ -40,16 +37,14 @@ return
 $;::
     if (w_down)
         return
-    Send, {m up}{n up}
-    Send, % toggle ? "{m down}" : "{n down}"
-    w_down := 1
+    Send, {b up}{b down}
     last := 1
-    toggle := !toggle
+    w_down := 1
 return
 
 $; up::
     if (last = 1) {
-        Send, {m up}{n up}
+        Send, {b up}
     }
     w_down := 0
 return
