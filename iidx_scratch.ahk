@@ -15,6 +15,9 @@ if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
         ExitApp
     }
 
+SetCapsLockState, AlwaysOff
+CapsLock::return
+
 toggle := 1
 last := 0 ;; q->0, w->1
 q_down := 0
